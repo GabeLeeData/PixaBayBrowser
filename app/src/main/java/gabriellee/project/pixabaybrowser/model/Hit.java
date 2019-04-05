@@ -3,37 +3,32 @@ package gabriellee.project.pixabaybrowser.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Hit implements Parcelable {
+public class Hit implements Parcelable{
 
     private String user;
     private String tags;
-    private String userImageUrl;
-    private String imageUrl;
+    private String userImageURL;
+    private String webformatURL;
     private int views;
-    private int likes;
-    private int download;
 
-    public Hit(String user, String tags, String userImageUrl, String imageUrl, int views, int likes, int download) {
+    public Hit(String user, String tags, String userImageURL, String webformatURL, int views) {
         this.user = user;
         this.tags = tags;
-        this.userImageUrl = userImageUrl;
-        this.imageUrl = imageUrl;
+        this.userImageURL = userImageURL;
+        this.webformatURL = webformatURL;
         this.views = views;
-        this.likes = likes;
-        this.download = download;
     }
 
     public Hit() {
+
     }
 
     protected Hit(Parcel in) {
         user = in.readString();
         tags = in.readString();
-        userImageUrl = in.readString();
-        imageUrl = in.readString();
+        userImageURL = in.readString();
+        webformatURL = in.readString();
         views = in.readInt();
-        likes = in.readInt();
-        download = in.readInt();
     }
 
     public static final Creator<Hit> CREATOR = new Creator<Hit>() {
@@ -64,20 +59,20 @@ public class Hit implements Parcelable {
         this.tags = tags;
     }
 
-    public String getUserImageUrl() {
-        return userImageUrl;
+    public String getUserImageURL() {
+        return userImageURL;
     }
 
-    public void setUserImageUrl(String userImageUrl) {
-        this.userImageUrl = userImageUrl;
+    public void setUserImageURL(String userImageURL) {
+        this.userImageURL = userImageURL;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getWebformatURL() {
+        return webformatURL;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setWebformatURL(String webformatURL) {
+        this.webformatURL = webformatURL;
     }
 
     public int getViews() {
@@ -86,35 +81,6 @@ public class Hit implements Parcelable {
 
     public void setViews(int views) {
         this.views = views;
-    }
-
-    public int getLikes() {
-        return likes;
-    }
-
-    public void setLikes(int likes) {
-        this.likes = likes;
-    }
-
-    public int getDownload() {
-        return download;
-    }
-
-    public void setDownload(int download) {
-        this.download = download;
-    }
-
-    @Override
-    public String toString() {
-        return "Hit{" +
-                "user='" + user + '\'' +
-                ", tags='" + tags + '\'' +
-                ", userImageUrl='" + userImageUrl + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", views=" + views +
-                ", likes=" + likes +
-                ", download=" + download +
-                '}';
     }
 
     @Override
@@ -126,10 +92,8 @@ public class Hit implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(user);
         dest.writeString(tags);
-        dest.writeString(userImageUrl);
-        dest.writeString(imageUrl);
+        dest.writeString(userImageURL);
+        dest.writeString(webformatURL);
         dest.writeInt(views);
-        dest.writeInt(likes);
-        dest.writeInt(download);
     }
 }

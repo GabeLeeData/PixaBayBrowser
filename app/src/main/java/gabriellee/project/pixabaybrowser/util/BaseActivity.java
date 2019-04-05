@@ -1,10 +1,12 @@
-package gabriellee.project.pixabaybrowser;
+package gabriellee.project.pixabaybrowser.util;
 
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+
+import gabriellee.project.pixabaybrowser.R;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
